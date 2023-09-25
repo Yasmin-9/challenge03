@@ -4,7 +4,7 @@ import csv
 from pathlib import Path
 
 #setting a path for the file
-file_path="C:/Bootcamp/ALLHW/challenge03/Starter_Code/PyBank/Resources/budget_data.csv"
+file_path="C:/Bootcamp/ALLHW/python-challenge/PyBank/Resources/budget_data.csv"
 
 #setting empty lists
 months = []
@@ -48,8 +48,8 @@ print(f"Greatest Decrease in Profits : {months[max_decrease_month]} (${str(max_d
 
 #opening the analysis text file
 
-#txt_file= "C:/Bootcamp/ALLHW/challenge03/Starter_Code/PyBank/analysis.txt"
-txt_file= Path("CHALLENGE03","Startger_Code", "PyBank", "analysis.txt")
+txt_file= "C:/Bootcamp/ALLHW/python-challenge/PyBank/analysis.txt"
+
 
 with open(txt_file,"w") as file:
     file.write("Financial Analysis\n")

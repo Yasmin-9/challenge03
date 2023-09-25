@@ -4,7 +4,7 @@ import csv
 from pathlib import Path
 
 #setting a path for the file
-file_path="C:/Bootcamp/ALLHW/challenge03/Starter_Code/PyPoll/Resources/election_data.csv"
+file_path="C:/Bootcamp/ALLHW/python-challenge/PyPoll/Resources/election_data.csv"
 
 #setting empty lists
 total_votes=0
@@ -24,32 +24,32 @@ with open(file_path) as csvfile:
         #looping through the rows + 1 to obtain the total votes
         total_votes=total_votes+1
         current_candidate=row[2]
+        #obtaining the list of candidates, to eliminate duplicates
         if current_candidate not in candidates:
             candidates.append(current_candidate)
             candidates_votes[current_candidate]=0
         candidates_votes[current_candidate]=candidates_votes[current_candidate]+1
     #print total votes
     print("Total votes: ", total_votes) 
-    #print the list of candidates
-    #print(candidates) (not needed) 
-    #print the number of candidates votes
-    #print(candidates_votes)(not needed)
 
+#determining the number of votes and percentage, using candidates_votes dictionary
+    #looping through the dictionary to obtain vote count for each candidate
     for candidate in candidates_votes:
         current_vote=candidates_votes[candidate]
+        #calculating vote % 
         percentage = current_vote/total_votes *100
+        #determining the candidate with the highest vote count
         if current_vote > winner:
             winner = current_vote
             winner_name = candidate
         #print the list of candidate, percentage and their current vote)
-        #print(candidate,percentage, current_vote)
         print(f"{candidate}, {percentage:.3f}, ({current_vote})")
     #print the winner name
-    #print(winner_name, winner)
     print("Winnner: ", winner_name)
         
-    
-txt_file = "C:/Bootcamp/ALLHW/challenge03/Starter_Code/PyPoll/analysis.txt"
+
+# writing analysis text file    
+txt_file = "C:/Bootcamp/ALLHW/python-challenge/PyPoll/analysis.txt"
 
 with open (txt_file,"w") as file:
     file.write("Election Results\n")
